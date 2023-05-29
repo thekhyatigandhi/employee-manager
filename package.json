@@ -1,18 +1,20 @@
 {
-  "name": "employee-manager",
+  "name": "employee-tracker",
   "version": "1.0.0",
-  "description": "This content management systems (CMS) is a command-line application to manage a company's employee database, using Node.js, Inquirer, and MySQL.",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
+ 
+  "keywords": [],
   "author": "",
-  "license": "MIT",
+  "license": "ISC",
 
-"dependencies": {
-  "dotenv": "^16.0.3",
-  "inquirer": "^8.2.4",
-  "mysql2": "^3.2.4"
-}
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "inquirer": "^8.2.4",
+    "mysql2": "^3.2.4"
+  }
 }

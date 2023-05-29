@@ -1,14 +1,15 @@
 const db = require("./config/connection.js");
 const selectTask = require("./lib/selectTask.js");
 
-// handle errors or start application
+// Connect to the database and handle errors, then start the application
 db.connect(function (err) {
-  if (err) throw err;
+  if (err) {
+    throw err;
+  }
   init();
 });
 
-// start application, show title special-text and present task list prompt (using 'selectTask')
+// Start the application, display the title text, and present the task list prompt using 'selectTask'
 function init() {
-  displayTitleText();
   selectTask();
 }
