@@ -1,34 +1,25 @@
--- 3 talbes to be included: department, role, employee
-DROP DATABASE IF EXISTS employee_management_db;
-CREATE DATABASE employee_management_db;
+DROP DATABASE IF EXISTS employee_db;
+CREATE DATABASE employee_db;
+USE employee_db;
 
-USE employee_management_db;
-
--- department: id as PRIMARY KEY, name as VARCHAR(30) to hold department name
 CREATE TABLE department (
-    id INT NOT NULL AUTO_INCREMENT,
-    name VARCHAR(30) NOT NULL,
-    PRIMARY KEY (id)
+    id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    name VARCHAR(30) NOT NULL
 );
 
--- role: id as PRIMARY KEY, title as VARCHAR(30) to hold role title, salary as DECIMAL to hold role salary, department_id as INT to hold reference to department role belongs to
 CREATE TABLE role (
-    id INT NOT NULL AUTO_INCREMENT,
+    id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
     title VARCHAR(30) NOT NULL,
-    salary DECIMAL(10,2) NOT NULL,
-    department_id INT NOT NULL,
-    PRIMARY KEY (id),
-    FOREIGN KEY (department_id) REFERENCES department(id)
+    salary DECIMAL NOT NULL,
+    department_id INT,
+    CONSTRAINT fk_department FOREIGN KEY (department_id) REFERENCES department(id) ON DELETE SET NULL
 );
 
--- employee: id as PRIMARY KEY, first_name as VARCHAR(30) to hold employee first name, last_name as VARCHAR(30) to hold employee last name, role_id as INT to hold reference to employee role, manager_id as INT to hold reference to another employee that manager the current employee(null if the employee has no manager)
 CREATE TABLE employee (
-    id INT NOT NULL AUTO_INCREMENT,
+    id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
     first_name VARCHAR(30) NOT NULL,
     last_name VARCHAR(30) NOT NULL,
-    role_id INT NOT NULL,
-    manager_id INT,
-    PRIMARY KEY (id),
-    FOREIGN KEY (role_id) REFERENCES role(id),
-    FOREIGN KEY (manager_id) REFERENCES employee(id)
+    role_id INT,
+    manager_id INT REFERENCES employee(id) ON DELETE SET NULL,
+    CONSTRAINT fk_role FOREIGN KEY (role_id) REFERENCES role(id) ON DELETE SET NULL
 );
