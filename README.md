@@ -18,9 +18,8 @@ This content management systems (CMS) is a command-line application to manage a 
 
 ## Application
 
-The following video shows the application's appearance and functionality:
+The following [video](https://youtu.be/eMEfQEJ3AX4) shows the application's appearance and functionality:
 
-![Deployed Application](https://youtu.be/eMEfQEJ3AX4)
 
 ## Technologies Used
 
