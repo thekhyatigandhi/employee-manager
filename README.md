@@ -20,6 +20,7 @@ This content management systems (CMS) is a command-line application to manage a 
 
 The following [video](https://youtu.be/eMEfQEJ3AX4) shows the application's appearance and functionality:
 
+https://github.com/thekhyatigandhi/employee-manager/assets/125392517/35fd1d33-bc9f-42e5-aaa9-1184e922bb8d
 
 ## Technologies Used
 
